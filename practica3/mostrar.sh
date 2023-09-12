@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # Es una buena práctica agregar un breve comentario que documente qué hacen
 # los scripts que escribimos, para que nuestro "futuro yo" no quiera volver
 # en el tiempo a golpearnos la cabeza contra el teclado por no entender qué
@@ -17,4 +18,4 @@ echo "La cantidad de espacio libre en disco es: `df -h`"
 echo "Directorio personal: $HOME"
 echo "Introduzca el directorio del cual desea listar sus archivos:"
 read directorio
-ls directorio
+ls $directorio
