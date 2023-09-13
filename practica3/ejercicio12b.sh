@@ -1,10 +1,12 @@
 #!/bin/bash
 
 # Evaluación de expresiones
-# Este script dos números por parámetro
+# Este script recibe dos números por parámetro
 # e imprime la suma, resta, multiplicación y cuál de los números es mayor
 
-if [ $# -gt 1 ]; then
+if [ $# -ne 2 ]; then
+	exit 1;	
+else	
 	echo "La suma de los números es: `expr $1 + $2`"
 	echo "La resta de $1 menos $2 es: `expr $1 - $2`"
 	echo "La multiplicación de los números es: `expr $1 \* $2`"
@@ -17,3 +19,4 @@ if [ $# -gt 1 ]; then
 		echo "No hay número mayor"
 	fi
 fi
+exit 0
