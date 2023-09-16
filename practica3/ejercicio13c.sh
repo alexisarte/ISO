@@ -1,17 +1,17 @@
 #!/bin/bash
 
-if [ $# -eq 1 ]; then
-	if [ -e "$1" ]; then
-	      	echo "La entidad $1 existe"
-		if [ -f "$1" ]; then
-			echo "Es un archivo"
-		elif [ -d "$1" ]; then
-			echo "Es un directorio"
-		else
-			echo "No es un archivo ni un directorio"
-		fi
-	else
-		echo "La entiad $1 no existe, se creará el directorio $1"
-		mkdir "$1"
-	fi
+#recibe un nombre, indica si existe, aclarando si es un archivo o directorio
+#si no existe crea un directorio con ese nombre
+if [ $# -ne 1 ]; then
+	echo "Debe indicar un nombre de archivo"
+	exit 1
+fi
+
+if [ ! -e "$1" ]; then
+	echo "$1 no existe"
+	mkdir $1
+elif [ -d "$1" ]; then
+	echo "Es un directorio"
+else
+	echo "Es un archivo"
 fi
