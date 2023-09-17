@@ -14,13 +14,13 @@ fi
 
 echo -n > reporte.txt
 
-for linea in $(cat /etc/passwd/ | cut -d: -f 1,6); do
+for linea in $(cat /etc/passwd | cut -d: -f 1,6); do
 	# iso:/home/iso
 	user=$(echo $linea | cut -d: -f1)
 	home=$(echo $linea | cut -d: -f2)
 	
 	#No contabilizaremos usuarios sin directorio personal
-	if [ -d $ $home ]; then	
+	if [ -d $home ]; then	
 		echo $user $(find $home -name "*.$1" | wc -l) >> reporte.txt
 	fi
 
